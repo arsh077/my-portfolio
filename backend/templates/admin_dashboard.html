@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Arshad Anwar Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <style>
+        body {
+            background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+        }
+    </style>
+</head>
+<body class="min-h-screen text-white">
+    <!-- Navigation -->
+    <nav class="bg-black/50 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="w-8 h-8 bg-[#C3E41D] rounded-full flex items-center justify-center mr-3">
+                        <span class="text-black font-bold text-sm">AA</span>
+                    </div>
+                    <h1 class="text-xl font-semibold">Admin Dashboard</h1>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <span id="adminName" class="text-gray-300"></span>
+                    <button 
+                        id="logoutButton"
+                        class="bg-red-600 hover:bg-red-700 px-4 py-2 rounded-lg text-sm font-medium transition-colors"
+                    >
+                        Logout
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- Stats Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+            <div class="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20">
+                <div class="flex items-center">
+                    <div class="p-2 bg-blue-500/20 rounded-lg">
+                        <i data-lucide="mail" class="w-6 h-6 text-blue-400"></i>
+                    </div>
+                    <div class="ml-4">
+                        <p class="text-sm font-medium text-gray-400">Total Submissions</p>
+                        <p id="totalSubmissions" class="text-2xl font-semibold text-white">-</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20">
+                <div class="flex items-center">
+                    <div class="p-2 bg-yellow-500/20 rounded-lg">
+                        <i data-lucide="mail-open" class="w-6 h-6 text-yellow-400"></i>
+                    </div>
+                    <div class="ml-4">
+                        <p class="text-sm font-medium text-gray-400">Unread</p>
+                        <p id="unreadSubmissions" class="text-2xl font-semibold text-white">-</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20">
+                <div class="flex items-center">
+                    <div class="p-2 bg-green-500/20 rounded-lg">
+                        <i data-lucide="trending-up" class="w-6 h-6 text-green-400"></i>
+                    </div>
+                    <div class="ml-4">
+                        <p class="text-sm font-medium text-gray-400">This Week</p>
+                        <p id="recentSubmissions" class="text-2xl font-semibold text-white">-</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20">
+                <div class="flex items-center">
+                    <div class="p-2 bg-purple-500/20 rounded-lg">
+                        <i data-lucide="users" class="w-6 h-6 text-purple-400"></i>
+                    </div>
+                    <div class="ml-4">
+                        <p class="text-sm font-medium text-gray-400">Response Rate</p>
+                        <p class="text-2xl font-semibold text-white">98%</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Filters -->
+        <div class="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20 mb-6">
+            <div class="flex flex-wrap items-center gap-4">
+                <h2 class="text-lg font-semibold">Contact Submissions</h2>
+                <div class="flex gap-2 ml-auto">
+                    <button 
+                        id="filterAll" 
+                        class="filter-btn active px-4 py-2 rounded-lg text-sm font-medium transition-colors"
+                    >
+                        All
+                    </button>
+                    <button 
+                        id="filterUnread" 
+                        class="filter-btn px-4 py-2 rounded-lg text-sm font-medium transition-colors"
+                    >
+                        Unread
+                    </button>
+                    <button 
+                        id="filterRead" 
+                        class="filter-btn px-4 py-2 rounded-lg text-sm font-medium transition-colors"
+                    >
+                        Read
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Submissions Table -->
+        <div class="bg-white/10 backdrop-blur-md rounded-xl border border-white/20 overflow-hidden">
+            <div class="overflow-x-auto">
+                <table class="w-full">
+                    <thead class="bg-white/5">
+                        <tr>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">Contact</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">Service</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">Message</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">Date</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">Status</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="submissionsTable" class="divide-y divide-white/10">
+                        <!-- Submissions will be loaded here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Loading State -->
+        <div id="loadingState" class="text-center py-12">
+            <div class="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-[#C3E41D]"></div>
+            <p class="mt-2 text-gray-400">Loading submissions...</p>
+        </div>
+
+        <!-- Empty State -->
+        <div id="emptyState" class="hidden text-center py-12">
+            <i data-lucide="mail" class="w-16 h-16 text-gray-600 mx-auto mb-4"></i>
+            <p class="text-gray-400">No submissions found</p>
+        </div>
+    </div>
+
+    <!-- Submission Detail Modal -->
+    <div id="submissionModal" class="hidden fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+        <div class="bg-gray-900 rounded-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+            <div class="p-6 border-b border-gray-700">
+                <div class="flex justify-between items-center">
+                    <h3 class="text-xl font-semibold">Submission Details</h3>
+                    <button id="closeModal" class="text-gray-400 hover:text-white">
+                        <i data-lucide="x" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+            <div id="modalContent" class="p-6">
+                <!-- Modal content will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Global variables
+        let currentFilter = 'all';
+        let submissions = [];
+        let adminToken = localStorage.getItem('adminToken');
+
+        // Check authentication
+        if (!adminToken) {
+            window.location.href = '/admin/login';
+        }
+
+        // Set admin name
+        const adminUser = JSON.parse(localStorage.getItem('adminUser') || '{}');
+        document.getElementById('adminName').textContent = adminUser.username || 'Admin';
+
+        // Logout functionality
+        document.getElementById('logoutButton').addEventListener('click', () => {
+            localStorage.removeItem('adminToken');
+            localStorage.removeItem('adminUser');
+            window.location.href = '/admin/login';
+        });
+
+        // Filter buttons
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                document.querySelectorAll('.filter-btn').forEach(b => {
+                    b.classList.remove('active', 'bg-[#C3E41D]', 'text-black');
+                    b.classList.add('bg-white/10', 'text-gray-300');
+                });
+                
+                e.target.classList.add('active', 'bg-[#C3E41D]', 'text-black');
+                e.target.classList.remove('bg-white/10', 'text-gray-300');
+                
+                currentFilter = e.target.id.replace('filter', '').toLowerCase();
+                loadSubmissions();
+            });
+        });
+
+        // API functions
+        async function apiCall(endpoint, options = {}) {
+            const response = await fetch(endpoint, {
+                ...options,
+                headers: {
+                    'Authorization': `Bearer ${adminToken}`,
+                    'Content-Type': 'application/json',
+                    ...options.headers
+                }
+            });
+
+            if (response.status === 401) {
+                localStorage.removeItem('adminToken');
+                window.location.href = '/admin/login';
+                return;
+            }
+
+            return response.json();
+        }
+
+        // Load statistics
+        async function loadStats() {
+            try {
+                const data = await apiCall('/api/admin/stats');
+                if (data.success) {
+                    document.getElementById('totalSubmissions').textContent = data.stats.total_submissions;
+                    document.getElementById('unreadSubmissions').textContent = data.stats.unread_submissions;
+                    document.getElementById('recentSubmissions').textContent = data.stats.recent_submissions;
+                }
+            } catch (error) {
+                console.error('Error loading stats:', error);
+            }
+        }
+
+        // Load submissions
+        async function loadSubmissions() {
+            try {
+                document.getElementById('loadingState').classList.remove('hidden');
+                document.getElementById('emptyState').classList.add('hidden');
+                
+                let url = '/api/admin/submissions';
+                if (currentFilter === 'unread') url += '?is_read=false';
+                if (currentFilter === 'read') url += '?is_read=true';
+                
+                const data = await apiCall(url);
+                
+                if (data.success) {
+                    submissions = data.submissions;
+                    renderSubmissions(submissions);
+                }
+            } catch (error) {
+                console.error('Error loading submissions:', error);
+            } finally {
+                document.getElementById('loadingState').classList.add('hidden');
+            }
+        }
+
+        // Render submissions table
+        function renderSubmissions(submissions) {
+            const tbody = document.getElementById('submissionsTable');
+            
+            if (submissions.length === 0) {
+                tbody.innerHTML = '';
+                document.getElementById('emptyState').classList.remove('hidden');
+                return;
+            }
+
+            document.getElementById('emptyState').classList.add('hidden');
+            
+            tbody.innerHTML = submissions.map(submission => `
+                <tr class="hover:bg-white/5 cursor-pointer" onclick="viewSubmission(${submission.id})">
+                    <td class="px-6 py-4">
+                        <div>
+                            <div class="text-sm font-medium text-white">${submission.name}</div>
+                            <div class="text-sm text-gray-400">${submission.email}</div>
+                        </div>
+                    </td>
+                    <td class="px-6 py-4">
+                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-500/20 text-blue-300">
+                            ${submission.service}
+                        </span>
+                    </td>
+                    <td class="px-6 py-4">
+                        <div class="text-sm text-gray-300 truncate max-w-xs">
+                            ${submission.message}
+                        </div>
+                    </td>
+                    <td class="px-6 py-4 text-sm text-gray-400">
+                        ${new Date(submission.submitted_at).toLocaleDateString()}
+                    </td>
+                    <td class="px-6 py-4">
+                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
+                            submission.is_read 
+                                ? 'bg-green-500/20 text-green-300' 
+                                : 'bg-yellow-500/20 text-yellow-300'
+                        }">
+                            ${submission.is_read ? 'Read' : 'Unread'}
+                        </span>
+                    </td>
+                    <td class="px-6 py-4">
+                        <button 
+                            onclick="event.stopPropagation(); deleteSubmission(${submission.id})"
+                            class="text-red-400 hover:text-red-300 transition-colors"
+                        >
+                            <i data-lucide="trash-2" class="w-4 h-4"></i>
+                        </button>
+                    </td>
+                </tr>
+            `).join('');
+            
+            // Re-initialize Lucide icons
+            lucide.createIcons();
+        }
+
+        // View submission details
+        async function viewSubmission(id) {
+            try {
+                const data = await apiCall(`/api/admin/submissions/${id}`);
+                if (data.success) {
+                    const submission = data.submission;
+                    document.getElementById('modalContent').innerHTML = `
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-400 mb-1">Name</label>
+                                <p class="text-white">${submission.name}</p>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-400 mb-1">Email</label>
+                                <p class="text-white">${submission.email}</p>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-400 mb-1">Service</label>
+                                <p class="text-white">${submission.service}</p>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-400 mb-1">Message</label>
+                                <p class="text-white bg-white/5 p-4 rounded-lg">${submission.message}</p>
+                            </div>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-400 mb-1">Submitted</label>
+                                    <p class="text-white">${new Date(submission.submitted_at).toLocaleString()}</p>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-400 mb-1">IP Address</label>
+                                    <p class="text-white">${submission.ip_address || 'N/A'}</p>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    document.getElementById('submissionModal').classList.remove('hidden');
+                    
+                    // Refresh the list to show updated read status
+                    loadSubmissions();
+                    loadStats();
+                }
+            } catch (error) {
+                console.error('Error viewing submission:', error);
+            }
+        }
+
+        // Delete submission
+        async function deleteSubmission(id) {
+            if (!confirm('Are you sure you want to delete this submission?')) return;
+            
+            try {
+                const data = await apiCall(`/api/admin/submissions/${id}`, {
+                    method: 'DELETE'
+                });
+                
+                if (data.success) {
+                    loadSubmissions();
+                    loadStats();
+                }
+            } catch (error) {
+                console.error('Error deleting submission:', error);
+            }
+        }
+
+        // Close modal
+        document.getElementById('closeModal').addEventListener('click', () => {
+            document.getElementById('submissionModal').classList.add('hidden');
+        });
+
+        // Close modal on outside click
+        document.getElementById('submissionModal').addEventListener('click', (e) => {
+            if (e.target.id === 'submissionModal') {
+                document.getElementById('submissionModal').classList.add('hidden');
+            }
+        });
+
+        // Initialize dashboard
+        loadStats();
+        loadSubmissions();
+
+        // Auto-refresh every 30 seconds
+        setInterval(() => {
+            loadStats();
+            loadSubmissions();
+        }, 30000);
+    </script>
+</body>
+</html>
