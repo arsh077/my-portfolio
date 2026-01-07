@@ -131,6 +131,7 @@ def api_docs():
     return docs
 
 if __name__ == '__main__':
+    import os
     print("🚀 Starting Arshad Anwar Portfolio Backend...")
     print("📧 Contact Form API: http://localhost:5000/api/submit-contact")
     print("🔐 Admin Panel: http://localhost:5000/admin")
@@ -138,4 +139,8 @@ if __name__ == '__main__':
     print("❤️  Health Check: http://localhost:5000/health")
     print("-" * 50)
     
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    # Use PORT environment variable for production (Heroku)
+    port = int(os.environ.get('PORT', 5000))
+    debug = os.environ.get('FLASK_ENV') != 'production'
+    
+    app.run(debug=debug, host='0.0.0.0', port=port)

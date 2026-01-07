@@ -152,8 +152,13 @@ export default function App() {
       message: formData.get('message') as string
     };
     
+    // Use production backend URL when deployed, localhost for development
+    const API_BASE_URL = window.location.hostname === 'localhost' 
+      ? 'http://localhost:5000'
+      : 'https://arshad-portfolio-backend.herokuapp.com';
+    
     try {
-      const response = await fetch('http://localhost:5000/api/submit-contact', {
+      const response = await fetch(`${API_BASE_URL}/api/submit-contact`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -254,7 +259,10 @@ export default function App() {
           <div className="flex items-center gap-3">
             {/* Admin Login Button */}
             <a 
-              href="http://localhost:5000/admin/login" 
+              href={window.location.hostname === 'localhost' 
+                ? 'http://localhost:5000/admin/login' 
+                : 'https://arshad-portfolio-backend.herokuapp.com/admin/login'
+              }
               target="_blank" 
               rel="noopener noreferrer"
               className="hidden md:flex items-center gap-2 px-3 py-2 text-xs font-medium text-neutral-500 hover:text-[#C3E41D] transition-colors duration-300"
