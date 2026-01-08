@@ -26,6 +26,7 @@ Professional portfolio website for **Arshad Anwar**, Founder of Legal Success In
 - **[Legal Success India](https://legalsuccessindia.com/)** - Comprehensive legal-tech platform
 - **[Khurak Application](https://khurak-new-application.vercel.app/)** - Modern food delivery app
 - **[Legal Success India v2](https://legal-success-indiaa-new-work-azf3.vercel.app/)** - Enhanced legal platform
+- **[Modern Web Application](https://695f8e9cf76af1feafbe803a--graceful-gecko-58ed9c.netlify.app/)** - Cutting-edge web application with modern UI
 
 ## 🛠️ Tech Stack
 
