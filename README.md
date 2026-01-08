@@ -28,6 +28,7 @@ A modern, responsive portfolio website built with React, TypeScript, and Tailwin
    - [Khurak Application](https://khurak-new-application.vercel.app/)
    - [Legal Success India v2](https://legal-success-indiaa-new-work-azf3.vercel.app/)
    - [Modern Web Application](https://695f8e9cf76af1feafbe803a--graceful-gecko-58ed9c.netlify.app/)
+   - [Website Configuration Tool](https://new-website-configue.vercel.app/)
 4. **Services**: Legal-tech and web development services
 5. **Testimonials**: Client feedback and reviews
 6. **Contact**: Contact form and social links
