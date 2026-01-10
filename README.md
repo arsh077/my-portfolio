@@ -30,6 +30,7 @@ A modern, responsive portfolio website built with React, TypeScript, and Tailwin
    - [Modern Web Application](https://695f8e9cf76af1feafbe803a--graceful-gecko-58ed9c.netlify.app/)
    - [Website Configuration Tool](https://new-website-configue.vercel.app/)
    - [Mill Creek Application](https://mill-creek-ysu5.vercel.app/)
+   - [Moab Veterinary Clinic](https://moab-veterinary-67jr.vercel.app/)
 4. **Services**: Legal-tech and web development services
 5. **Testimonials**: Client feedback and reviews
 6. **Contact**: Contact form and social links
