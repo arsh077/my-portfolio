@@ -520,22 +520,23 @@ export default function App() {
                     </div>
                  </Card>
                </a>
-               {/* Project 6 - Placeholder for future expansion */}
-               <Card className="group cursor-pointer hover:scale-105 transition-transform duration-300 opacity-50">
-                  <div className="h-48 mb-6 overflow-hidden rounded-lg bg-neutral-200 dark:bg-neutral-800 relative flex items-center justify-center">
-                     <div className="text-center">
-                        <div className="w-16 h-16 bg-[#C3E41D]/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                          <span className="text-[#C3E41D] text-2xl font-bold">+</span>
-                        </div>
-                        <p className="text-neutral-400 text-sm">More Projects Coming Soon</p>
-                     </div>
-                  </div>
-                  <h3 className="text-xl font-bold mb-2 text-neutral-400">Future Project</h3>
-                  <p className="text-neutral-500 text-sm mb-4">Stay tuned for more innovative projects and applications.</p>
-                  <div className="flex gap-2 flex-wrap">
-                    <span className="px-2 py-1 text-xs rounded-full bg-neutral-500/20 text-neutral-400">Coming Soon</span>
-                  </div>
-               </Card>
+               {/* Project 6 */}
+               <a href="https://mill-creek-ysu5.vercel.app/" target="_blank" rel="noopener noreferrer">
+                 <Card className="group cursor-pointer hover:scale-105 transition-transform duration-300">
+                    <div className="h-48 mb-6 overflow-hidden rounded-lg bg-neutral-200 dark:bg-neutral-800 relative">
+                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                          <ExternalLink className="text-white" />
+                       </div>
+                    </div>
+                    <h3 className="text-xl font-bold mb-2">Mill Creek Application</h3>
+                    <p className="text-neutral-500 text-sm mb-4">A sophisticated web application featuring modern design patterns and seamless user experience.</p>
+                    <div className="flex gap-2 flex-wrap">
+                      <span className="px-2 py-1 text-xs rounded-full bg-[#C3E41D]/20 text-[#C3E41D]">React</span>
+                      <span className="px-2 py-1 text-xs rounded-full bg-[#C3E41D]/20 text-[#C3E41D]">Vercel</span>
+                      <span className="px-2 py-1 text-xs rounded-full bg-[#C3E41D]/20 text-[#C3E41D]">Modern UI</span>
+                    </div>
+                 </Card>
+               </a>
             </div>
           </div>
         </section>
