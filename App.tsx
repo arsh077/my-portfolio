@@ -4,6 +4,7 @@ import {
   Mail, Github, Linkedin, Twitter, Globe, MessageSquare, 
   Terminal, Shield, Zap, Smartphone, ExternalLink 
 } from "lucide-react"; 
+import { SparklesCore } from "@/components/ui/sparkles"; 
  
 // Inline Button component 
 const Button = React.forwardRef<HTMLButtonElement, React.ButtonHTMLAttributes<HTMLButtonElement>>( 
@@ -295,6 +296,20 @@ export default function App() {
       <main className="flex flex-col"> 
         {/* Hero Section */} 
         <section id="home" className="relative min-h-screen w-full flex flex-col items-center justify-center overflow-hidden"> 
+          {/* Sparkles Background Animation */}
+          <div className="w-full absolute inset-0 h-screen">
+            <SparklesCore
+              id="tsparticlesfullpage"
+              background="transparent"
+              minSize={0.6}
+              maxSize={1.4}
+              particleDensity={100}
+              className="w-full h-full"
+              particleColor="#C3E41D"
+              speed={1}
+            />
+          </div>
+          
           {/* Centered Main Name */} 
           <div className="relative text-center z-10"> 
             <div> 
