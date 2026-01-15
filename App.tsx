@@ -338,7 +338,7 @@ export default function App() {
               <div className="w-[100px] h-[160px] md:w-[130px] md:h-[220px] rounded-full overflow-hidden shadow-2xl transition-transform duration-300 hover:scale-110 cursor-pointer border-4 border-neutral-100 dark:border-neutral-900"> 
                 <img 
                   src="/profile-red-bg.jpeg" 
-                  alt="Arshad Anwar - Founder of Legal Success India" 
+                  alt="Arshad Anwar - Freelance Full-Stack Developer" 
                   className="w-full h-full object-cover" 
                   onError={(e) => {
                     e.currentTarget.style.display = 'none';
@@ -356,7 +356,7 @@ export default function App() {
           <div className="absolute bottom-24 md:bottom-32 left-0 right-0 px-6"> 
             <div className="flex justify-center"> 
               <BlurText 
-                text="Founder & Full-Stack Developer at Legal Success India" 
+                text="Freelance Full-Stack Developer | Building Detailed Custom Websites" 
                 delay={150} 
                 animateBy="words" 
                 direction="top" 
@@ -426,10 +426,10 @@ export default function App() {
              </div>
              <div className="space-y-6 text-lg leading-relaxed text-neutral-600 dark:text-neutral-400">
                 <p>
-                  <strong className="text-black dark:text-white">Hi, I’m Arshad Anwar.</strong> Founder of Legal Success India and a passionate full-stack developer specializing in legal-tech solutions.
+                  <strong className="text-black dark:text-white">Hi, I’m Arshad Anwar.</strong> A passionate freelance full-stack developer who specializes in building detailed, custom websites from scratch.
                 </p>
                 <p>
-                  With a unique blend of legal expertise and advanced web development skills, I build products that streamline complex legal processes for businesses and individuals. I believe in creating scalable, high-performance websites that not only look good but solve real-world problems.
+                  With advanced web development skills and attention to detail, I create scalable, high-performance websites tailored to your specific needs. I believe in writing clean, maintainable code that not only looks great but solves real-world problems for businesses and individuals.
                 </p>
                 <div className="grid grid-cols-2 gap-4 mt-8">
                   <div>
