@@ -195,12 +195,26 @@ export default function App() {
  
   return ( 
     <div  
-      className="min-h-screen text-foreground transition-colors font-sans selection:bg-[#C3E41D] selection:text-black" 
+      className="min-h-screen text-foreground transition-colors font-sans selection:bg-[#C3E41D] selection:text-black relative" 
       style={{ 
         backgroundColor: isDark ? "hsl(0 0% 0%)" : "hsl(0 0% 98%)", 
         color: isDark ? "hsl(0 0% 100%)" : "hsl(0 0% 10%)", 
       }} 
     > 
+      {/* Full Page Sparkles Background - Fixed */}
+      <div className="fixed inset-0 w-full h-full z-0 pointer-events-none">
+        <SparklesCore
+          id="tsparticlesfullpage"
+          background="transparent"
+          minSize={0.6}
+          maxSize={1.4}
+          particleDensity={80}
+          className="w-full h-full"
+          particleColor={isDark ? "#C3E41D" : "#a3c41a"}
+          speed={0.8}
+        />
+      </div>
+
       {/* Header */} 
       <header className="fixed top-0 left-0 right-0 z-50 px-6 py-6 backdrop-blur-sm bg-opacity-80"> 
         <nav className="flex items-center justify-between max-w-screen-2xl mx-auto"> 
@@ -293,23 +307,9 @@ export default function App() {
       </header> 
  
       {/* Main Content */}
-      <main className="flex flex-col"> 
+      <main className="flex flex-col relative z-10"> 
         {/* Hero Section */} 
         <section id="home" className="relative min-h-screen w-full flex flex-col items-center justify-center overflow-hidden"> 
-          {/* Sparkles Background Animation */}
-          <div className="w-full absolute inset-0 h-screen">
-            <SparklesCore
-              id="tsparticlesfullpage"
-              background="transparent"
-              minSize={0.6}
-              maxSize={1.4}
-              particleDensity={100}
-              className="w-full h-full"
-              particleColor="#C3E41D"
-              speed={1}
-            />
-          </div>
-          
           {/* Centered Main Name */} 
           <div className="relative text-center z-10"> 
             <div> 
