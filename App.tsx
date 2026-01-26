@@ -327,7 +327,7 @@ export default function App() {
                   delay={100} 
                   animateBy="letters" 
                   direction="top" 
-                  className="font-bold text-[100px] sm:text-[140px] md:text-[180px] lg:text-[210px] leading-[0.75] tracking-tighter uppercase justify-center whitespace-nowrap" 
+                  className="font-bold text-[60px] xs:text-[80px] sm:text-[100px] md:text-[140px] lg:text-[180px] xl:text-[210px] leading-[0.75] tracking-tighter uppercase justify-center whitespace-nowrap" 
                   style={{ color: "#C3E41D", fontFamily: "'Fira Code', monospace" }} 
                 /> 
               </div> 
@@ -337,14 +337,14 @@ export default function App() {
                   delay={100} 
                   animateBy="letters" 
                   direction="top" 
-                  className="font-bold text-[100px] sm:text-[140px] md:text-[180px] lg:text-[210px] leading-[0.75] tracking-tighter uppercase justify-center whitespace-nowrap" 
+                  className="font-bold text-[60px] xs:text-[80px] sm:text-[100px] md:text-[140px] lg:text-[180px] xl:text-[210px] leading-[0.75] tracking-tighter uppercase justify-center whitespace-nowrap" 
                   style={{ color: "#C3E41D", fontFamily: "'Fira Code', monospace" }} 
                 /> 
               </div> 
 
               {/* Profile Picture */} 
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10"> 
-                <div className="w-[65px] h-[110px] sm:w-[90px] sm:h-[152px] md:w-[110px] md:h-[185px] lg:w-[129px] lg:h-[218px] rounded-full overflow-hidden shadow-2xl transition-transform duration-300 hover:scale-110 cursor-pointer border-4 border-neutral-100 dark:border-neutral-900"> 
+                <div className="w-[45px] h-[75px] xs:w-[55px] xs:h-[90px] sm:w-[65px] sm:h-[110px] md:w-[90px] md:h-[152px] lg:w-[110px] lg:h-[185px] xl:w-[129px] xl:h-[218px] rounded-full overflow-hidden shadow-2xl transition-transform duration-300 hover:scale-110 cursor-pointer border-2 md:border-4 border-neutral-100 dark:border-neutral-900"> 
                   <img 
                     src="/profile-red-bg.jpeg" 
                     alt="Arshad Anwar - Freelance Full-Stack Developer" 
@@ -354,7 +354,7 @@ export default function App() {
                       e.currentTarget.nextElementSibling.style.display = 'flex';
                     }}
                   />
-                  <div className="w-full h-full bg-gradient-to-br from-[#C3E41D] to-[#a3c41a] flex items-center justify-center text-black font-bold text-2xl md:text-3xl" style={{display: 'none'}}>
+                  <div className="w-full h-full bg-gradient-to-br from-[#C3E41D] to-[#a3c41a] flex items-center justify-center text-black font-bold text-lg md:text-2xl xl:text-3xl" style={{display: 'none'}}>
                     AA
                   </div>
                 </div> 
@@ -370,7 +370,7 @@ export default function App() {
                 delay={150} 
                 animateBy="words" 
                 direction="top" 
-                className="text-[15px] sm:text-[18px] md:text-[20px] lg:text-[22px] text-center transition-colors duration-300 text-neutral-500 hover:text-black dark:hover:text-white" 
+                className="text-[12px] xs:text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] xl:text-[22px] text-center transition-colors duration-300 text-neutral-500 hover:text-black dark:hover:text-white" 
                 style={{ fontFamily: "'Antic', sans-serif" }} 
               /> 
             </div> 
