@@ -4,6 +4,7 @@ import {
   Mail, Github, Linkedin, Twitter, Globe, MessageSquare, 
   Terminal, Shield, Zap, Smartphone, ExternalLink 
 } from "lucide-react"; 
+import { ShootingStars } from "./components/ShootingStars"; 
  
 // Inline Button component 
 const Button = React.forwardRef<HTMLButtonElement, React.ButtonHTMLAttributes<HTMLButtonElement>>( 
@@ -295,6 +296,19 @@ export default function App() {
       <main className="flex flex-col relative z-10"> 
         {/* Hero Section */} 
         <section id="home" className="relative min-h-screen w-full flex flex-col items-center justify-center overflow-hidden"> 
+          {/* Shooting Stars Background */}
+          <ShootingStars 
+            minSpeed={15}
+            maxSpeed={35}
+            minDelay={800}
+            maxDelay={3000}
+            starColor="#C3E41D"
+            trailColor="#ffffff"
+            starWidth={12}
+            starHeight={2}
+            className="pointer-events-none"
+          />
+          
           {/* Centered Main Name */} 
           <div className="relative text-center z-10"> 
             <div> 
