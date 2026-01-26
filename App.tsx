@@ -295,7 +295,7 @@ export default function App() {
       {/* Main Content */}
       <main className="flex flex-col relative z-10"> 
         {/* Hero Section */} 
-        <section id="home" className="relative min-h-screen w-full flex flex-col items-center justify-center overflow-hidden"> 
+        <section id="home" className="relative min-h-screen flex flex-col"> 
           {/* Shooting Stars Background */}
           <ShootingStars 
             minSpeed={15}
@@ -309,57 +309,59 @@ export default function App() {
             className="pointer-events-none z-10"
           />
           
-          {/* Centered Main Name */}
-          <div className="text-center z-20">
-            <div>
-              <BlurText 
-                text="ARSHAD" 
-                delay={100} 
-                animateBy="letters" 
-                direction="top" 
-                className="font-bold text-[60px] xs:text-[80px] sm:text-[100px] md:text-[140px] lg:text-[180px] xl:text-[210px] leading-[0.75] tracking-tighter uppercase justify-center whitespace-nowrap" 
-                style={{ color: "#C3E41D", fontFamily: "'Fira Code', monospace" }} 
-              /> 
-            </div> 
-            <div>
-              <BlurText 
-                text="ANWAR" 
-                delay={100} 
-                animateBy="letters" 
-                direction="top" 
-                className="font-bold text-[60px] xs:text-[80px] sm:text-[100px] md:text-[140px] lg:text-[180px] xl:text-[210px] leading-[0.75] tracking-tighter uppercase justify-center whitespace-nowrap" 
-                style={{ color: "#C3E41D", fontFamily: "'Fira Code', monospace" }} 
-              /> 
-            </div> 
-
-            {/* Profile Picture */} 
-            <div className="flex justify-center mt-6 mb-8"> 
-              <div className="w-[80px] h-[80px] xs:w-[100px] xs:h-[100px] sm:w-[120px] sm:h-[120px] md:w-[140px] md:h-[140px] lg:w-[160px] lg:h-[160px] xl:w-[180px] xl:h-[180px] rounded-full overflow-hidden shadow-2xl transition-transform duration-300 hover:scale-110 cursor-pointer border-2 md:border-4 border-[#C3E41D]"> 
-                <img 
-                  src="/profile-red-bg.jpeg" 
-                  alt="Arshad Anwar - Freelance Full-Stack Developer" 
-                  className="w-full h-full object-cover" 
-                  onError={(e) => {
-                    e.currentTarget.style.display = 'none';
-                    e.currentTarget.nextElementSibling.style.display = 'flex';
-                  }}
-                />
-                <div className="w-full h-full bg-gradient-to-br from-[#C3E41D] to-[#a3c41a] flex items-center justify-center text-black font-bold text-lg md:text-2xl xl:text-3xl" style={{display: 'none'}}>
-                  AA
-                </div>
+          {/* Centered Main Name - Always Perfectly Centered */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full px-4">
+            <div className="relative text-center">
+              <div>
+                <BlurText 
+                  text="ARSHAD" 
+                  delay={100} 
+                  animateBy="letters" 
+                  direction="top" 
+                  className="font-bold text-[100px] sm:text-[140px] md:text-[180px] lg:text-[210px] leading-[0.75] tracking-tighter uppercase justify-center whitespace-nowrap" 
+                  style={{ color: "#C3E41D", fontFamily: "'Fira Code', monospace" }} 
+                /> 
               </div> 
-            </div> 
+              <div>
+                <BlurText 
+                  text="ANWAR" 
+                  delay={100} 
+                  animateBy="letters" 
+                  direction="top" 
+                  className="font-bold text-[100px] sm:text-[140px] md:text-[180px] lg:text-[210px] leading-[0.75] tracking-tighter uppercase justify-center whitespace-nowrap" 
+                  style={{ color: "#C3E41D", fontFamily: "'Fira Code', monospace" }} 
+                /> 
+              </div> 
+
+              {/* Profile Picture */} 
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10"> 
+                <div className="w-[65px] h-[110px] sm:w-[90px] sm:h-[152px] md:w-[110px] md:h-[185px] lg:w-[129px] lg:h-[218px] rounded-full overflow-hidden shadow-2xl transition-transform duration-300 hover:scale-110 cursor-pointer"> 
+                  <img 
+                    src="/profile-red-bg.jpeg" 
+                    alt="Arshad Anwar - Freelance Full-Stack Developer" 
+                    className="w-full h-full object-cover" 
+                    onError={(e) => {
+                      e.currentTarget.style.display = 'none';
+                      e.currentTarget.nextElementSibling.style.display = 'flex';
+                    }}
+                  />
+                  <div className="w-full h-full bg-gradient-to-br from-[#C3E41D] to-[#a3c41a] flex items-center justify-center text-black font-bold text-lg md:text-2xl xl:text-3xl" style={{display: 'none'}}>
+                    AA
+                  </div>
+                </div> 
+              </div> 
+            </div>
           </div>
 
-          {/* Tagline */} 
-          <div className="absolute bottom-16 sm:bottom-20 md:bottom-24 lg:bottom-32 xl:bottom-36 left-1/2 -translate-x-1/2 w-full px-6 z-20"> 
+          {/* Tagline - Proper Distance Below Hero */} 
+          <div className="absolute bottom-16 sm:bottom-20 md:bottom-24 lg:bottom-32 xl:bottom-36 left-1/2 -translate-x-1/2 w-full px-6"> 
             <div className="flex justify-center"> 
               <BlurText 
                 text="Freelance Full-Stack Developer | Building Detailed Custom Websites" 
                 delay={150} 
                 animateBy="words" 
                 direction="top" 
-                className="text-[12px] xs:text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] xl:text-[22px] text-center transition-colors duration-300 text-neutral-600 dark:text-neutral-400" 
+                className="text-[15px] sm:text-[18px] md:text-[20px] lg:text-[22px] text-center transition-colors duration-300 text-neutral-500 hover:text-black dark:hover:text-white" 
                 style={{ fontFamily: "'Antic', sans-serif" }} 
               /> 
             </div> 
@@ -368,11 +370,11 @@ export default function App() {
           {/* Scroll Indicator */} 
           <button
             type="button"
-            className="absolute bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 transition-colors duration-300 z-20"
+            className="absolute bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 transition-colors duration-300"
             aria-label="Scroll down"
             onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
           >
-            <ChevronDown className="w-5 h-5 md:w-8 md:h-8 text-neutral-500 hover:text-black dark:hover:text-white transition-colors duration-300 animate-bounce" /> 
+            <ChevronDown className="w-5 h-5 md:w-8 md:h-8 text-neutral-500 hover:text-black dark:hover:text-white transition-colors duration-300" /> 
           </button>
         </section> 
 
