@@ -4,8 +4,7 @@ import {
   Mail, Github, Linkedin, Twitter, Globe, MessageSquare, 
   Terminal, Shield, Zap, Smartphone, ExternalLink 
 } from "lucide-react"; 
-import { ShootingStars } from "./components/ShootingStars";
-import { SplineScene } from "./components/SplineScene"; 
+import { ShootingStars } from "./components/ShootingStars"; 
  
 // Inline Button component 
 const Button = React.forwardRef<HTMLButtonElement, React.ButtonHTMLAttributes<HTMLButtonElement>>( 
@@ -296,15 +295,7 @@ export default function App() {
       {/* Main Content */}
       <main className="flex flex-col relative z-10"> 
         {/* Hero Section */} 
-        <section id="home" className="relative min-h-screen w-full flex flex-col items-center justify-center overflow-hidden bg-black"> 
-          {/* Spline 3D Background - Optional */}
-          <div className="absolute inset-0 w-full h-full opacity-30">
-            <SplineScene 
-              scene="https://prod.spline.design/6Wq1Q7YGyM-iab9i/scene.splinecode"
-              className="w-full h-full"
-            />
-          </div>
-
+        <section id="home" className="relative min-h-screen w-full flex flex-col items-center justify-center overflow-hidden"> 
           {/* Shooting Stars Background */}
           <ShootingStars 
             minSpeed={15}
@@ -318,59 +309,57 @@ export default function App() {
             className="pointer-events-none z-10"
           />
           
-          {/* Centered Main Name - Always Perfectly Centered */}
-          <div className="relative w-full px-4 z-30">
-            <div className="text-center">
-              <div>
-                <BlurText 
-                  text="ARSHAD" 
-                  delay={100} 
-                  animateBy="letters" 
-                  direction="top" 
-                  className="font-bold text-[60px] xs:text-[80px] sm:text-[100px] md:text-[140px] lg:text-[180px] xl:text-[210px] leading-[0.75] tracking-tighter uppercase justify-center whitespace-nowrap" 
-                  style={{ color: "#C3E41D", fontFamily: "'Fira Code', monospace" }} 
-                /> 
-              </div> 
-              <div>
-                <BlurText 
-                  text="ANWAR" 
-                  delay={100} 
-                  animateBy="letters" 
-                  direction="top" 
-                  className="font-bold text-[60px] xs:text-[80px] sm:text-[100px] md:text-[140px] lg:text-[180px] xl:text-[210px] leading-[0.75] tracking-tighter uppercase justify-center whitespace-nowrap" 
-                  style={{ color: "#C3E41D", fontFamily: "'Fira Code', monospace" }} 
-                /> 
-              </div> 
+          {/* Centered Main Name */}
+          <div className="text-center z-20">
+            <div>
+              <BlurText 
+                text="ARSHAD" 
+                delay={100} 
+                animateBy="letters" 
+                direction="top" 
+                className="font-bold text-[60px] xs:text-[80px] sm:text-[100px] md:text-[140px] lg:text-[180px] xl:text-[210px] leading-[0.75] tracking-tighter uppercase justify-center whitespace-nowrap" 
+                style={{ color: "#C3E41D", fontFamily: "'Fira Code', monospace" }} 
+              /> 
+            </div> 
+            <div>
+              <BlurText 
+                text="ANWAR" 
+                delay={100} 
+                animateBy="letters" 
+                direction="top" 
+                className="font-bold text-[60px] xs:text-[80px] sm:text-[100px] md:text-[140px] lg:text-[180px] xl:text-[210px] leading-[0.75] tracking-tighter uppercase justify-center whitespace-nowrap" 
+                style={{ color: "#C3E41D", fontFamily: "'Fira Code', monospace" }} 
+              /> 
+            </div> 
 
-              {/* Profile Picture */} 
-              <div className="flex justify-center mt-6 mb-8"> 
-                <div className="w-[80px] h-[80px] xs:w-[100px] xs:h-[100px] sm:w-[120px] sm:h-[120px] md:w-[140px] md:h-[140px] lg:w-[160px] lg:h-[160px] xl:w-[180px] xl:h-[180px] rounded-full overflow-hidden shadow-2xl transition-transform duration-300 hover:scale-110 cursor-pointer border-2 md:border-4 border-[#C3E41D]"> 
-                  <img 
-                    src="/profile-red-bg.jpeg" 
-                    alt="Arshad Anwar - Freelance Full-Stack Developer" 
-                    className="w-full h-full object-cover" 
-                    onError={(e) => {
-                      e.currentTarget.style.display = 'none';
-                      e.currentTarget.nextElementSibling.style.display = 'flex';
-                    }}
-                  />
-                  <div className="w-full h-full bg-gradient-to-br from-[#C3E41D] to-[#a3c41a] flex items-center justify-center text-black font-bold text-lg md:text-2xl xl:text-3xl" style={{display: 'none'}}>
-                    AA
-                  </div>
-                </div> 
+            {/* Profile Picture */} 
+            <div className="flex justify-center mt-6 mb-8"> 
+              <div className="w-[80px] h-[80px] xs:w-[100px] xs:h-[100px] sm:w-[120px] sm:h-[120px] md:w-[140px] md:h-[140px] lg:w-[160px] lg:h-[160px] xl:w-[180px] xl:h-[180px] rounded-full overflow-hidden shadow-2xl transition-transform duration-300 hover:scale-110 cursor-pointer border-2 md:border-4 border-[#C3E41D]"> 
+                <img 
+                  src="/profile-red-bg.jpeg" 
+                  alt="Arshad Anwar - Freelance Full-Stack Developer" 
+                  className="w-full h-full object-cover" 
+                  onError={(e) => {
+                    e.currentTarget.style.display = 'none';
+                    e.currentTarget.nextElementSibling.style.display = 'flex';
+                  }}
+                />
+                <div className="w-full h-full bg-gradient-to-br from-[#C3E41D] to-[#a3c41a] flex items-center justify-center text-black font-bold text-lg md:text-2xl xl:text-3xl" style={{display: 'none'}}>
+                  AA
+                </div>
               </div> 
-            </div>
+            </div> 
           </div>
 
-          {/* Tagline - Proper Distance Below Hero */} 
-          <div className="absolute bottom-16 sm:bottom-20 md:bottom-24 lg:bottom-32 xl:bottom-36 left-1/2 -translate-x-1/2 w-full px-6 z-30"> 
+          {/* Tagline */} 
+          <div className="absolute bottom-16 sm:bottom-20 md:bottom-24 lg:bottom-32 xl:bottom-36 left-1/2 -translate-x-1/2 w-full px-6 z-20"> 
             <div className="flex justify-center"> 
               <BlurText 
                 text="Freelance Full-Stack Developer | Building Detailed Custom Websites" 
                 delay={150} 
                 animateBy="words" 
                 direction="top" 
-                className="text-[12px] xs:text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] xl:text-[22px] text-center transition-colors duration-300 text-white" 
+                className="text-[12px] xs:text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] xl:text-[22px] text-center transition-colors duration-300 text-neutral-600 dark:text-neutral-400" 
                 style={{ fontFamily: "'Antic', sans-serif" }} 
               /> 
             </div> 
@@ -379,11 +368,11 @@ export default function App() {
           {/* Scroll Indicator */} 
           <button
             type="button"
-            className="absolute bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 transition-colors duration-300 z-30"
+            className="absolute bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 transition-colors duration-300 z-20"
             aria-label="Scroll down"
             onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
           >
-            <ChevronDown className="w-5 h-5 md:w-8 md:h-8 text-white hover:text-[#C3E41D] transition-colors duration-300 animate-bounce" /> 
+            <ChevronDown className="w-5 h-5 md:w-8 md:h-8 text-neutral-500 hover:text-black dark:hover:text-white transition-colors duration-300 animate-bounce" /> 
           </button>
         </section> 
 
