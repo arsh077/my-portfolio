@@ -4,7 +4,6 @@ import {
   Mail, Github, Linkedin, Twitter, Globe, MessageSquare, 
   Terminal, Shield, Zap, Smartphone, ExternalLink 
 } from "lucide-react"; 
-import { SparklesCore } from "@/components/ui/sparkles"; 
  
 // Inline Button component 
 const Button = React.forwardRef<HTMLButtonElement, React.ButtonHTMLAttributes<HTMLButtonElement>>( 
@@ -201,20 +200,6 @@ export default function App() {
         color: isDark ? "hsl(0 0% 100%)" : "hsl(0 0% 10%)", 
       }} 
     > 
-      {/* Full Page Sparkles Background - Fixed */}
-      <div className="fixed inset-0 w-full h-full z-0 pointer-events-none">
-        <SparklesCore
-          id="tsparticlesfullpage"
-          background="transparent"
-          minSize={0.6}
-          maxSize={1.4}
-          particleDensity={80}
-          className="w-full h-full"
-          particleColor={isDark ? "#C3E41D" : "#a3c41a"}
-          speed={0.8}
-        />
-      </div>
-
       {/* Header */} 
       <header className="fixed top-0 left-0 right-0 z-50 px-6 py-6 backdrop-blur-sm bg-opacity-80"> 
         <nav className="flex items-center justify-between max-w-screen-2xl mx-auto"> 
