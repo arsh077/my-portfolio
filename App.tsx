@@ -532,6 +532,22 @@ export default function App() {
                   </div>
                 </Card>
               </a>
+              <a href="https://trademarkapply.vercel.app/" target="_blank" rel="noopener noreferrer">
+                <Card className="group cursor-pointer hover:scale-105 transition-transform duration-300">
+                  <div className="h-48 mb-6 overflow-hidden rounded-lg bg-neutral-200 dark:bg-neutral-800 relative">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                      <ExternalLink className="text-white" />
+                    </div>
+                  </div>
+                  <h3 className="text-xl font-bold mb-2">TrademarkApply</h3>
+                  <p className="text-neutral-500 text-sm mb-4">Professional trademark registration services helping businesses protect their brands with expert legal guidance.</p>
+                  <div className="flex gap-2 flex-wrap">
+                    <span className="px-2 py-1 text-xs rounded-full bg-[#C3E41D]/20 text-[#C3E41D]">React</span>
+                    <span className="px-2 py-1 text-xs rounded-full bg-[#C3E41D]/20 text-[#C3E41D]">Legal-Tech</span>
+                    <span className="px-2 py-1 text-xs rounded-full bg-[#C3E41D]/20 text-[#C3E41D]">Services</span>
+                  </div>
+                </Card>
+              </a>
               {/* Project 5 - NEW */}
               <a href="https://new-website-configue.vercel.app/" target="_blank" rel="noopener noreferrer">
                 <Card className="group cursor-pointer hover:scale-105 transition-transform duration-300">
@@ -665,6 +681,23 @@ export default function App() {
                     <span className="px-2 py-1 text-xs rounded-full bg-[#C3E41D]/20 text-[#C3E41D]">Next.js</span>
                     <span className="px-2 py-1 text-xs rounded-full bg-[#C3E41D]/20 text-[#C3E41D]">Interactive UI</span>
                     <span className="px-2 py-1 text-xs rounded-full bg-[#C3E41D]/20 text-[#C3E41D]">Legal-Tech</span>
+                  </div>
+                </Card>
+              </a>
+              {/* Project 12 - Trademark Apply */}
+              <a href="https://trademarkapply.vercel.app/" target="_blank" rel="noopener noreferrer">
+                <Card className="group cursor-pointer hover:scale-105 transition-transform duration-300">
+                  <div className="h-48 mb-6 overflow-hidden rounded-lg bg-neutral-200 dark:bg-neutral-800 relative">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                      <ExternalLink className="text-white" />
+                    </div>
+                  </div>
+                  <h3 className="text-xl font-bold mb-2">Trademark Apply</h3>
+                  <p className="text-neutral-500 text-sm mb-4">A comprehensive trademark filing platform streamlining the application process with intelligent form validation and document management.</p>
+                  <div className="flex gap-2 flex-wrap">
+                    <span className="px-2 py-1 text-xs rounded-full bg-[#C3E41D]/20 text-[#C3E41D]">Next.js</span>
+                    <span className="px-2 py-1 text-xs rounded-full bg-[#C3E41D]/20 text-[#C3E41D]">Legal-Tech</span>
+                    <span className="px-2 py-1 text-xs rounded-full bg-[#C3E41D]/20 text-[#C3E41D]">Vercel</span>
                   </div>
                 </Card>
               </a>
