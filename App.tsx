@@ -701,6 +701,23 @@ export default function App() {
                   </div>
                 </Card>
               </a>
+              {/* Project 13 - Faiz Bike */}
+              <a href="https://faiz-bike.vercel.app/" target="_blank" rel="noopener noreferrer">
+                <Card className="group cursor-pointer hover:scale-105 transition-transform duration-300">
+                  <div className="h-48 mb-6 overflow-hidden rounded-lg bg-neutral-200 dark:bg-neutral-800 relative">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                      <ExternalLink className="text-white" />
+                    </div>
+                  </div>
+                  <h3 className="text-xl font-bold mb-2">Faiz Bike</h3>
+                  <p className="text-neutral-500 text-sm mb-4">A modern bike showcase and e-commerce platform featuring interactive product displays and seamless user experience.</p>
+                  <div className="flex gap-2 flex-wrap">
+                    <span className="px-2 py-1 text-xs rounded-full bg-[#C3E41D]/20 text-[#C3E41D]">React</span>
+                    <span className="px-2 py-1 text-xs rounded-full bg-[#C3E41D]/20 text-[#C3E41D]">E-commerce</span>
+                    <span className="px-2 py-1 text-xs rounded-full bg-[#C3E41D]/20 text-[#C3E41D]">Vercel</span>
+                  </div>
+                </Card>
+              </a>
             </div>
           </div>
         </section>
